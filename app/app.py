@@ -16,7 +16,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 while True:
     try:
         db = mysql.connector.connect(
-            host="db",
+            host=os.getenv("DB_HOST","localhost"),
             user="root",
             password="root",
             database="userdb"
