@@ -44,11 +44,11 @@ pipeline {
         stage('Push Changes to GitHub') {
             steps {
                 sh """
-                git config --global user.email "singhalanhilom145.com"
-                git config --global user.name "kumargorav-cloud"
+                git config --global user.email "jenkins@devops.com"
+                git config --global user.name "jenkins"
                 git add helm/two-tier-webapp/values.yaml
                 git commit -m "update image tag $IMAGE_TAG"
-                git push
+                git push origin HEAD:main
                 """
             }
         }
