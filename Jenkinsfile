@@ -4,6 +4,12 @@ pipeline {
 
     stages {
 
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -rf *'
+            }
+        }
+
         stage('Clone Repository') {
             steps {
                 sh 'git clone https://github.com/kumargorav-cloud/two-tier-webapp.git .'
@@ -16,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('List Docker Images') {
+        stage('Verify Docker Image') {
             steps {
                 sh 'docker images'
             }
