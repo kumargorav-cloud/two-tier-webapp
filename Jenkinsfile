@@ -4,6 +4,12 @@ pipeline {
 
     stages {
 
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t two-tier-webapp -f docker/Dockerfile .'
